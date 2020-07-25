@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TO-DO App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/todo.css">
+
+
+</head>
+
+<body>
+    <div>
+        <h1 class="text-center ">TODO APP</h1>
+        <br>
+        </div>
+<div class="main">
+  <div class="container">
+    <div class="row">
+   
+    <form onsubmit="return addBook()" id="adForm">
+      <div class="form-group col-sm-6 col-md-8 col-lg-12">
+        <label for="title"><h3>Title:</h3></label>
+        <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp" placeholder="Enter Title">
+      </div>
+      <div class="form-group  col-sm-6 col-md-8 col-lg-12">
+        <label for="description"><h3>Description:</h3></label>
+        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark" id="button">Submit</button>
+    </form>
+    </div>
+  </div>
+</div>
+    <br>
+    <div class="main">
+      <div class="container">
+        <div class="row">
+<div class="main3 col-sm-2 col-md-8 col-lg-12 ">
+    <table class="table table-hover ">
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date</th>
+      </tr>
+    </tbody>
+    </table>
+</div>
+  </div>
+  </div>
+</div>
+
+
+  <div class="main2">
+    <div class="container">
+      <div class="row">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog"> 
+    
+
+      <div class="modal-content ">
+        <div class="modal-header col-sm-6 col-md-8 col-lg-12">
+          <button type="button" class="close" data-dismiss="modal"></button>
+          <h4 class="modal-title">EDIT TODO</h4>
+        </div>
+        <div class="modal-body ">
+          <form id="eform" onsubmit="return edit();">
+            <div class="form-group col-sm-6 col-md-8 col-lg-12">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" name="title2" id="title2" aria-describedby="emailHelp" placeholder="Enter Title">
+            </div>
+            <div class="form-group col-sm-6 col-md-8 col-lg-12">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description2" name="description2" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark" id="button"  onclick="return update();" onkeypress="if(event.keyCode == 13){update();}">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" id="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ </div>
+</div>
+  </div>
+
+  <div>
+    <h1>
+      Design by: Abdullah Muhammad Ibrahim.
+    </h1>
+  </div>
+  
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBWYh11xNQfsbhysCaKBCHZlD4eS99C6eY",
+    authDomain: "bbsu-digi-lib.firebaseapp.com",
+    databaseURL: "https://bbsu-digi-lib.firebaseio.com",
+    projectId: "bbsu-digi-lib",
+    storageBucket: "bbsu-digi-lib.appspot.com",
+    messagingSenderId: "659193320469"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="apptodo.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html> 
